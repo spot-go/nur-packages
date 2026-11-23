@@ -9,22 +9,22 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "0d8j6kd0jwy9ai8kp5rzmgpy1imvgf0w906l03qrf0gzbbv1d12i";
-    armv7l-linux = "1cwl4aksyhwmrvq9airbr20afaral1p9xamf5yza4ngy7q3wln68";
-    aarch64-linux = "1gn0kahjazynq1k65b1md1l9q7dmhy690pjlc3z4n695kzia3br5";
-    aarch64-darwin = "18sddpscyrpj4d1f6pkhxaggsxhvirw6rp9mj91p0vbqkmmzlg2c";
+    x86_64-linux = "07ygmj0clsplmxa3ii9n1qdw7ba2nkps2kb3scf58filhyc1n5h6";
+    armv7l-linux = "1i1r4l08z9xbvyjvshplkjnkqz0s9q88jsp25rrnp8ivpaldbbgs";
+    aarch64-linux = "0p8fy44ic8gin64fi8si9ca8mqk033h4wcaxbbzg421wnwp17jln";
+    aarch64-darwin = "0bjg9xrz75kgra1pxxrw2hriawry7j0yi2i425525qqyhyqsqnid";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/spot-go/spot-go/releases/download/v0.2.1/spot-go_linux_amd64.tar.gz";
-    armv7l-linux = "https://github.com/spot-go/spot-go/releases/download/v0.2.1/spot-go_linux_armv7.tar.gz";
-    aarch64-linux = "https://github.com/spot-go/spot-go/releases/download/v0.2.1/spot-go_linux_arm64.tar.gz";
-    aarch64-darwin = "https://github.com/spot-go/spot-go/releases/download/v0.2.1/spot-go_darwin_arm64.tar.gz";
+    x86_64-linux = "https://github.com/spot-go/spot-go/releases/download/v0.2.2/spot-go_linux_amd64.tar.gz";
+    armv7l-linux = "https://github.com/spot-go/spot-go/releases/download/v0.2.2/spot-go_linux_armv7.tar.gz";
+    aarch64-linux = "https://github.com/spot-go/spot-go/releases/download/v0.2.2/spot-go_linux_arm64.tar.gz";
+    aarch64-darwin = "https://github.com/spot-go/spot-go/releases/download/v0.2.2/spot-go_darwin_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "spot-go";
-  version = "0.2.1";
+  version = "0.2.2";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
